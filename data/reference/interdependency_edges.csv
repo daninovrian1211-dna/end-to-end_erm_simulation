@@ -1,0 +1,12 @@
+source,target,channel,strength,evidence
+Macro downturn,Credit,GDP → NPF,3,CR01–03
+Macro downturn,Strategic,Laba & cost-to-income,2,ST02–03
+Macro downturn,Investment,Downgrade,2,IV02
+Policy rate ↑,Market,Nilai sukuk,3,MR02
+Policy rate ↑,Rate of Return,Gap bagi hasil,3,RR01–03
+Rate of Return,Liquidity,Deposan pindah (DCR),3,RR01 → LQ05
+Market,Liquidity,Haircut collateral,2,LQ01
+Strategic,Credit,Growth agresif → kualitas UMKM,2,ST01 → CR02
+Operational,Reputation,Gangguan digital → komplain,3,OR01 → RP01
+Compliance,Reputation,Temuan syariah → kepercayaan,2,CP04 → RP04
+Liquidity,Strategic,Pendanaan mahal → laba,1,–

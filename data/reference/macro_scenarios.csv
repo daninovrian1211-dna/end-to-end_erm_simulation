@@ -1,0 +1,11 @@
+variable,unit,baseline,adverse,severe
+gdp_growth,%,5.0,2.0,-1.0
+inflation,%,3.0,4.5,6.0
+policy_rate_shift,bps,0,100,250
+idr_depreciation,%,0,10,25
+deposit_runoff_30d_additional,% DPK,0,1.0,3.0
+deposit_decline_3m,% DPK,0,5,12
+sukuk_mv_shock_fvoci,%,0,-5,-15
+operational_event_uplift,%,0,20,50
+complaint_volume_uplift,pp,0,30,60
+rwa_uplift,%,0,2,5

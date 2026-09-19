@@ -1,0 +1,127 @@
+# =============================================================================
+# GENERATED OUTPUT — reproducible via `make all`, do not commit
+# =============================================================================
+
+# Synthetic raw data (generator output)
+data/raw/
+
+# Engine output (KRI, scoring, stress, capital, actions)
+data/output/
+
+# Power BI star schema CSVs
+dashboard/model/
+
+# Excel framework
+excel/
+
+# Executive report
+report/
+
+# =============================================================================
+# LARGE BINARY DELIVERABLES
+# =============================================================================
+
+*.xlsx
+*.pdf
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =============================================================================
+# TESTING & COVERAGE
+# =============================================================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.test.log
+
+# =============================================================================
+# JUPYTER NOTEBOOKS
+# =============================================================================
+
+# Notebook checkpoint files
+.ipynb_checkpoints/
+
+# Strip output from notebooks before committing (optional — remove if you
+# want to commit notebooks with output cells intact)
+# *.ipynb
+
+# =============================================================================
+# IDE & EDITORS
+# =============================================================================
+
+# VS Code
+.vscode/
+
+# JetBrains (PyCharm, etc.)
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# =============================================================================
+# OPERATING SYSTEM
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp

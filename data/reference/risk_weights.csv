@@ -1,0 +1,11 @@
+risk_type,materiality_weight,measurement_approach,depth
+Credit,0.25,quantitative,Medium
+Market,0.05,quantitative,Medium
+Liquidity,0.15,quantitative,Medium
+Operational,0.12,semi-quantitative,Medium
+Strategic,0.08,semi-quantitative,Medium
+Compliance,0.08,KRI-based,Basic
+Legal,0.04,KRI-based,Basic
+Reputation,0.06,KRI-based,Basic
+Rate of Return,0.10,quantitative,Basic-Medium
+Investment,0.07,quantitative,Basic-Medium

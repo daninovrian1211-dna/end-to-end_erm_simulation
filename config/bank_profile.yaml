@@ -1,0 +1,77 @@
+# Profil bank fiktif PT Amanah Syariah Bank (ASB) — sumber: ERM_Blueprint_v3_Spec.md §2
+# Nominal dalam Rp miliar. Jangan ubah tanpa mengubah spec.
+
+bank:
+  name: PT Amanah Syariah Bank
+  short_name: ASB
+  type: Bank Umum Syariah
+  fictional: true
+
+reporting:
+  reporting_date: "2026-09-30"
+  period_start: "2025-10"
+  period_end: "2026-09"
+  months: 12
+  random_seed: 42
+  currency_unit: Rp miliar
+  reconciliation_tolerance: 0.005   # ±0,5%
+
+balance_sheet_2026_09:
+  assets:
+    cash_and_bi_current_account: 5000
+    cash_and_bi_detail:
+      reserve_requirement_gwm: 3500
+      excess_reserve: 1500
+    placements_with_other_banks: 2000
+    sukuk_portfolio: 10000
+    sukuk_detail:
+      fvoci: 6000
+      amortized_cost: 4000
+      unencumbered: 7000
+    gross_financing: 41000
+    allowance_for_losses: -1000       # input statis, tidak dimodelkan
+    other_assets: 3000
+    total_assets: 60000
+  liabilities_equity:
+    giro_wadiah: 8000
+    tabungan: 16000                   # wadiah + mudharabah
+    deposito_mudharabah: 24000
+    total_dpk: 48000
+    other_funding: 4000
+    other_liabilities: 1000
+    equity: 7000
+    total_liabilities_equity: 60000
+
+capital:
+  capital_kpmm: 7000
+  atmr: 40000
+  kpmm_pct: 17.5
+
+income:
+  gross_income_annual: 5600
+
+financing:
+  umkm_share_pct: 30
+  umkm_outstanding: 12300
+  growth_target_yoy_pct: 15          # RKB
+  obligors_total: 6000               # ± (UMKM ±5.500; korporasi ±500)
+  obligors_umkm: 5500
+  obligors_corporate: 500
+
+deposits:
+  depositor_accounts_total: 250000   # ±; dataset: 20 deposan terbesar + agregat segmen
+  top_depositors_in_dataset: 20
+
+# SLSI (spec §4) — Synthetic Liquidity Stress Indicator, BUKAN LCR regulatori
+slsi:
+  haircut_sukuk_unencumbered: 0.05
+  runoff_30d:
+    giro_wadiah: 0.30
+    tabungan: 0.12
+    deposito_mudharabah: 0.12
+    other_funding: 0.25
+  liquid_assets_2026_09: 10150
+  # Keputusan user (Fase 2): net outflow 30 hari 8.750 dipakai tetap sebagai anchor Sep-2026.
+  # Bulan lain: net outflow = gross outflow bulan t × (8.750 / gross outflow Sep-2026).
+  net_outflow_30d_anchor: 8750
+  anchor_period: "2026-09"

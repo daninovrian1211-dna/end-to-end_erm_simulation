@@ -1,0 +1,44 @@
+kri_id,risk_type,kri_name,unit,direction,c1,c2,c3,c4,kri_weight,frequency,measurement_type,value_start_2025_10,value_target_2026_09,target_score,stress_sensitive,kri_owner
+CR01,Credit,NPF gross,%,lower,2.0,2.5,3.0,3.5,0.35,monthly,quantitative,2.3,2.8,3,Y,Credit Risk Management
+CR02,Credit,NPF segmen UMKM,%,lower,3.0,4.0,5.0,6.0,0.15,monthly,quantitative,4.2,5.3,4,Y,Credit Risk Management
+CR03,Credit,Rasio pembiayaan kolektibilitas 2 (DPD 1-90),%,lower,4.0,6.0,8.0,10.0,0.15,monthly,quantitative,5.0,6.5,3,Y,Credit Risk Management
+CR04,Credit,Konsentrasi 10 nasabah terbesar,% pembiayaan,lower,15,20,25,30,0.15,monthly,quantitative,17.5,18.1,2,N,Credit Risk Management
+CR05,Credit,Konsentrasi sektor terbesar,% pembiayaan,lower,15,20,25,30,0.20,monthly,quantitative,19.0,21.4,3,N,Credit Risk Management
+MR01,Market,Posisi Devisa Neto (PDN),% modal,lower,5,10,15,20,0.40,monthly,quantitative,6.0,7.2,2,Y,Treasury Middle Office
+MR02,Market,Sensitivitas sukuk FVOCI thd +100 bps (absolut),% modal,lower,1,2,3,4,0.30,monthly,quantitative,1.6,2.1,3,Y,Treasury Middle Office
+MR03,Market,Repricing gap <=1 thn (absolut),% total aset,lower,5,10,15,20,0.30,monthly,quantitative,7.5,8.5,2,N,ALM
+LQ01,Liquidity,Synthetic Liquidity Stress Indicator (SLSI),%,higher,125,110,105,100,0.35,monthly,quantitative,128,116,2,Y,Treasury / ALM
+LQ02,Liquidity,Financing to Deposit Ratio (FDR),%,lower,85,90,95,100,0.15,monthly,quantitative,82.0,85.4,2,Y,ALM
+LQ03,Liquidity,Konsentrasi 20 deposan terbesar,% DPK,lower,15,20,25,30,0.20,monthly,quantitative,20.5,22.0,3,Y,Treasury / ALM
+LQ04,Liquidity,Negative maturity gap <=1 bulan (absolut),% total aset,lower,5.0,7.5,10.0,12.5,0.15,monthly,quantitative,6.5,10.5,4,Y,ALM
+LQ05,Liquidity,Penurunan DPK 3 bulan,%,lower,2,4,6,8,0.15,monthly,quantitative,1.0,4.5,3,Y,Treasury / ALM
+OR01,Operational,Jumlah insiden operasional,count/bulan,lower,10,15,20,25,0.20,monthly,semi-quantitative,12,21,4,Y,Operational Risk Management
+OR02,Operational,Insiden high-severity (rolling 3 bulan),count,lower,1,2,4,6,0.25,monthly,semi-quantitative,1,3,3,Y,Operational Risk Management
+OR03,Operational,Kerugian operasional rolling 12 bulan,% gross income,lower,0.5,1.0,1.5,2.0,0.25,monthly,semi-quantitative,0.9,1.6,4,Y,Operational Risk Management
+OR04,Operational,Repeat incident rate,%,lower,3,5,7,10,0.15,monthly,semi-quantitative,4.0,8.0,4,N,Operational Risk Management
+OR05,Operational,Insiden melewati SLA penyelesaian,%,lower,5,10,15,20,0.15,monthly,semi-quantitative,8,12,3,Y,Operational Risk Management
+ST01,Strategic,Deviasi pertumbuhan pembiayaan YoY vs target (absolut),pp,lower,2,4,6,8,0.30,monthly,semi-quantitative,3,7,4,Y,Corporate Planning
+ST02,Strategic,Pencapaian laba YTD vs RKB,%,higher,100,95,90,85,0.30,monthly,semi-quantitative,99,93,3,Y,Corporate Planning
+ST03,Strategic,Cost to income (BOPO proxy),%,lower,75,80,85,90,0.25,monthly,semi-quantitative,78,82,3,Y,Corporate Planning
+ST04,Strategic,Inisiatif strategis terlambat,% inisiatif,lower,10,20,30,40,0.15,quarterly,semi-quantitative,10,25,3,N,Corporate Planning
+CP01,Compliance,Pelanggaran regulasi (rolling 3 bulan),count,lower,1,3,5,7,0.20,monthly,KRI-based,2,4,3,N,Compliance
+CP02,Compliance,Pelanggaran high-severity melewati target remediasi,count,lower,0,1,2,3,0.30,monthly,KRI-based,1,3,4,N,Compliance
+CP03,Compliance,Repeat breach rate,%,lower,5,10,15,20,0.20,monthly,KRI-based,8,12,3,N,Compliance
+CP04,Compliance,Temuan DPS (kepatuhan syariah) terbuka >90 hari,count,lower,0,1,2,4,0.30,monthly,KRI-based,1,2,3,N,Compliance / DPS Secretariat
+LG01,Legal,Kasus hukum terbuka,count,lower,5,10,15,20,0.30,monthly,KRI-based,7,8,2,N,Legal
+LG02,Legal,Kasus high-risk terbuka,count,lower,0,1,2,3,0.30,monthly,KRI-based,1,1,2,N,Legal
+LG03,Legal,Potensi eksposur kerugian hukum,% modal,lower,0.5,1.0,2.0,3.0,0.20,monthly,KRI-based,0.7,0.8,2,N,Legal
+LG04,Legal,Kasus aging >365 hari,% kasus terbuka,lower,10,20,30,40,0.20,monthly,KRI-based,18,22,3,N,Legal
+RP01,Reputation,Pertumbuhan volume komplain MoM,%,lower,5,10,20,30,0.20,monthly,KRI-based,5,25,4,Y,Customer Care / Corsec
+RP02,Reputation,Rasio komplain severe,% total komplain,lower,2,4,6,8,0.35,monthly,KRI-based,3.2,3.5,2,N,Customer Care / Corsec
+RP03,Reputation,Komplain selesai melewati SLA,%,lower,5,10,15,20,0.25,monthly,KRI-based,8,9,2,N,Customer Care / Corsec
+RP04,Reputation,Negative sentiment ratio,%,lower,10,20,30,40,0.20,monthly,KRI-based,15,22,3,N,Customer Care / Corsec
+RR01,Rate of Return,Gap bagi hasil deposito vs benchmark pasar (benchmark - ASB),pp,lower,0,0.25,0.50,0.75,0.30,monthly,quantitative,0.20,0.45,3,Y,ALM
+RR02,Rate of Return,Gap return ekspektasi vs realisasi deposan,pp,lower,0.2,0.4,0.6,0.8,0.30,monthly,quantitative,0.3,0.7,4,Y,ALM
+RR03,Rate of Return,Net imbal hasil (NIM syariah),%,higher,5.0,4.5,4.0,3.5,0.20,monthly,quantitative,4.8,4.4,3,Y,ALM / Finance
+RR04,Rate of Return,Porsi pembiayaan margin tetap tenor >3 thn,% pembiayaan,lower,30,40,50,60,0.20,monthly,quantitative,36,38,2,N,ALM
+IV01,Investment,Konsentrasi penerbit non-sovereign terbesar,% portofolio,lower,5,10,15,20,0.25,monthly,quantitative,8,8,2,N,Treasury Investment
+IV02,Investment,Eksposur rating di bawah idA,% portofolio,lower,2,5,8,12,0.30,monthly,quantitative,3,3,2,Y,Treasury Investment
+IV03,Investment,Penurunan nilai pasar FVOCI 3 bulan,%,lower,1,2,3,5,0.25,monthly,quantitative,0.5,1.2,2,Y,Treasury Investment
+IV04,Investment,Modified duration portofolio,tahun,lower,3,4,5,6,0.20,monthly,quantitative,4.0,4.3,3,N,Treasury Investment
+CAP01,Capital Overlay,KPMM (CAR),%,higher,16,14,12,10.5,0,monthly,quantitative,18.2,17.5,1,Y,Finance / Risk

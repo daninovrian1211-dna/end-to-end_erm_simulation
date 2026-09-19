@@ -1,0 +1,2 @@
+period,risk_type,model_score,final_score,direction,rationale,approved_by,valid_until
+2026-09,Compliance,3.3,3.6,up,"Dua dari tiga pelanggaran high-severity yang overdue terkait akad pembiayaan yang belum sesuai opini DPS dan berpotensi menjadi temuan pemeriksaan OJK; KRI kuantitatif belum menangkap dampak reputasi dan potensi sanksi.",Risk Management Committee (fiktif),2026-12

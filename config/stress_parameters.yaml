@@ -1,0 +1,70 @@
+# Koefisien stress testing — sumber: ERM_Blueprint_v3_Spec.md §5.2 (transmisi) dan §5.5 (capital overlay)
+# Semua koefisien adalah ASUMSI ANALITIS PROJECT, bukan parameter regulatori.
+# Definisi: dGDP = gdp_reference - gdp_growth skenario; dbps = policy_rate_shift skenario.
+
+conventions:
+  gdp_reference: 5.0          # ΔGDP = 5,0 − GDP skenario
+  bps_per_pct: 100            # Δbps/100
+  horizon_months: 12
+  static_balance_sheet: true
+  management_action: false
+
+transmission:
+  CR01: {rule: additive, gdp_coef: 0.20, bps_coef: 0.10}          # + 0,20×ΔGDP + 0,10×Δbps/100
+  CR02: {rule: multiple_of_delta, ref_kri: CR01, multiplier: 1.5} # + 1,5 × ΔCR01
+  CR03: {rule: additive, gdp_coef: 0.40}                          # + 0,40×ΔGDP
+  MR01: {rule: scale_by_variable, variable: idr_depreciation}      # × (1 + depresiasi)
+  MR02: {rule: scale_bps}                                          # × (100 + Δbps)/100
+  LQ01:                                                            # hitung ulang SLSI
+    rule: slsi_recalc
+    excess_reserve: 1500
+    placements: 2000
+    sukuk_unencumbered: 7000
+    base_haircut: 0.05                 # haircut = 5% + |MV shock|
+    haircut_shock_variable: sukuk_mv_shock_fvoci
+    net_outflow_30d_base: 8750
+    runoff_variable: deposit_runoff_30d_additional   # + run-off tambahan × DPK
+    dpk_base: 48000
+  LQ02: {rule: fdr_recalc, financing: 41000, dpk_base: 48000, variable: deposit_decline_3m}
+  LQ03: {rule: divide_by_dpk_decline, variable: deposit_decline_3m}  # ÷ (1 − penurunan DPK 3 bln)
+  LQ04: {rule: additive_variable, variable: deposit_decline_3m, coef: 0.25}
+  LQ05: {rule: max_baseline_variable, variable: deposit_decline_3m}
+  OR01: {rule: scale_by_variable, variable: operational_event_uplift}
+  OR02: {rule: scale_by_variable_ceil, variable: operational_event_uplift}
+  OR03: {rule: scale_by_variable, variable: operational_event_uplift}
+  OR05: {rule: scale_by_variable, variable: operational_event_uplift}
+  ST01: {rule: growth_deviation, growth_target: 15, gdp_coef: 2.0}   # growth aktual − 2,0×ΔGDP, deviasi vs 15%
+  ST02: {rule: additive, gdp_coef: -5.0}
+  ST03: {rule: additive, gdp_coef: 2.0}
+  RP01: {rule: additive_variable, variable: complaint_volume_uplift, coef: 1.0}
+  RR01: {rule: additive, bps_coef: 0.30}
+  RR02: {rule: additive, bps_coef: 0.20}
+  RR03: {rule: additive, bps_coef: -0.25}
+  IV02: {rule: additive, gdp_coef: 0.8}
+  IV03: {rule: max_baseline_abs_variable, variable: sukuk_mv_shock_fvoci}
+
+# KRI yang tidak sensitif makro (dinyatakan sebagai limitation)
+unchanged: [CR04, CR05, MR03, OR04, ST04, CP01, CP02, CP03, CP04,
+            LG01, LG02, LG03, LG04, RP02, RP03, RP04, RR04, IV01, IV04]
+
+capital_overlay:
+  credit_loss:
+    financing: 41000
+    loss_rate: 0.45            # asumsi tunggal, BUKAN model LGD/ECL
+    delta_npf_from: CR01
+  investment_loss:
+    fvoci_portfolio: 6000
+    shock_variable: sukuk_mv_shock_fvoci
+  operational_loss:
+    annual_loss_base: 90
+    uplift_variable: operational_event_uplift
+  dcr_cost:
+    deposito_mudharabah: 24000
+    pass_through: 0.50
+  capital:
+    capital_base: 7000
+    include_current_profit: false
+  atmr:
+    atmr_base: 40000
+    uplift_variable: rwa_uplift
+  cap01_kri_id: CAP01          # cut-point 16/14/12/10,5 di risk_appetite.csv
